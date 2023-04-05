@@ -1,4 +1,5 @@
 - name: access components
   hosts: "{{hosts}}"
+  become: yes
   roles:
     - "{{ROLES_NAME}}"
