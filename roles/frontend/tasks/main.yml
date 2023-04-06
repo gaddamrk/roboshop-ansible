@@ -45,7 +45,7 @@
 - name: ctreate html  directory
   ansible.builtin.file:
     path: usr/share/nginx/html
-    state: directory
+    state:  directory
 
 - name: download frontend app content
   ansible.builtin.unarchive:
