@@ -20,7 +20,7 @@
     remote_src: yes
 
 - name: install nodejs dependencies
-  common.general.npm:
+  community.general.npm:
     path: /app
     state: latest
 
