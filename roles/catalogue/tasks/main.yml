@@ -42,3 +42,20 @@
     daemon_reload: yes
     enabled: yes
     state: restarted
+
+
+- name: copy the mongodb repo files
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongo.repo
+
+- name: install mongodb
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: installed
+
+- name: load schema
+  community.mongodb.mongodb_shell:
+    login_host: mongodb-dev.devops70roboshop.online
+    files: "/app/schema/catalogue.js"
+    idempotent: yes
