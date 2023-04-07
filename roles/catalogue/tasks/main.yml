@@ -22,7 +22,7 @@
 - name: install nodejs dependencies
   community.general.npm:
     path: /app
-    state: installed
+    state: latest
 
 - name: copy systemd file
   ansible.builtin.copy:
