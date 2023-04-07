@@ -19,10 +19,10 @@
     dest: /app
     remote_src: yes
 
-- name: Update npm dependencies latest version.
+- name: install nodejs dependencies
   community.general.npm:
     path: /app
-    state: present
+    state: installed
 
 - name: copy systemd file
   ansible.builtin.copy:
