@@ -22,7 +22,7 @@
 - name: Update npm dependencies latest version.
   community.general.npm:
     path: /app
-    state: latest
+    state: present
 
 - name: copy systemd file
   ansible.builtin.copy:
