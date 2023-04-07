@@ -1,41 +1,9 @@
-#- name: configureing the node js files
-#  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-#
-#- name: install nodejs service
-#  ansible.builtin.yum:
-#    name: nodejs
-#    state: installed
-#
-#
-#  print_head "add application user"
-#  id roboshop &>>${log}
-#  if [ $? -ne 0 ]
-#  then
-#  useradd roboshop &>>${log}
-#  fi
-#  status_check
-#
-#  mkdir /app &>>${log}
-#
-#  print_head "download the ${component} content"
-#  curl -l -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${log}
-#  status_check
-#
-#
-#  print_head "clean up the old content"
-#  rm -rf /app/* &>>${log}
-#  status_check
-#
-#  print_head "extracting the app content"
-#  cd /app
-#  unzip /tmp/${component}.zip &>>{log}
-#  status_check
 
 - name: add application user
   ansible.builtin.user:
     name: roboshop
 
-- name: rempve old app content
+- name: remove old app content
   ansible.builtin.files:
     path: /app
     state: absent
