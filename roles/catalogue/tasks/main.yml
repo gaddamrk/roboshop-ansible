@@ -51,7 +51,7 @@
 
 - name: install mongodb
   ansible.builtin.yum:
-    name: mongodb-mongosh-shell
+    name: mongodb-mongosh
     state: installed
 
 
