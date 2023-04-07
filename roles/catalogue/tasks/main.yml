@@ -11,7 +11,7 @@
 - name: create app directory
   ansible.builtin.file:
     path: /app
-    state: directory
+    state:  directory
 
 - name: download the catalogue zip  content
   ansible.builtin.unarchive:
