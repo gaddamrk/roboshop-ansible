@@ -19,7 +19,7 @@
     dest: /app
     remote_src: yes
 
-- name: install nodejs dependencies
+- name: Update npm dependencies latest version.
   community.general.npm:
     path: /app
     state: latest
