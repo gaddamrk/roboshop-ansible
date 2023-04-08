@@ -10,11 +10,6 @@
     name: mongodb-org
     state: installed
 
-- name: config the mongod file replace module
-  ansible.builtin.replace:
-    path: /etc/mongod.conf
-    regexp: '127.0.0.1'
-    replace: '0.0.0.0'
 
 - name: start mongodb service
   ansible.builtin.systemd:
