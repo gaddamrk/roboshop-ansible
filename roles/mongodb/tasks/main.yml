@@ -10,6 +10,11 @@
     name: mongodb-mongosh
     state: installed
 
+- name: replace config file
+  ansible.builtin.replace:
+    path: /etc/mongodb.conf
+    regexp: 127.0.0.1
+    replace: 0.0.0.0
 
 - name: start mongodb service
   ansible.builtin.systemd:
