@@ -7,7 +7,7 @@
 
 - name: install mongodb
   ansible.builtin.yum:
-    name: mongodb-mongosh
+    name: mongodb-database-tools-*-100.7.0.rpm
     state: installed
 
 - name: config the mongod file replace module
