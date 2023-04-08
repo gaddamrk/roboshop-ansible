@@ -6,7 +6,7 @@
 
 
 - name: dnf module enable
-  ansible.builtin.shell: dnf module enable redis:remi-6.2
+  ansible.builtin.shell: dnf module enable redis:remi-6.2 -y
 
 - name: install redis server
   ansible.builtin.yum:
