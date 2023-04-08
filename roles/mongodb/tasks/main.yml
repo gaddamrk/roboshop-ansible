@@ -38,6 +38,6 @@
 
 - name: start mongodb service
   ansible.builtin.systemd:
-    name: mongod
+    name: mongosh
     state: restarted
     enabled: yes
