@@ -1,5 +1,5 @@
 - name: install python dependencies
-  ansible.buitlin.yum:
+  ansible.builtin.yum:
     name:
       -  python3-PyMySQL
       -  mysql
