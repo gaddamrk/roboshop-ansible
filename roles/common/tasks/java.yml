@@ -1,22 +1,20 @@
-- name: configure nodejs.yml repos
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-- name: install nodejs.yml
+
+- name: install maven
   ansible.builtin.yum:
-    name: nodejs
+    name: maven
     state: installed
 
 - name: app prereq files import
   ansible.builtin.include_tasks: "app-prereq.yml"
 
-- name: install nodejs dependencies
-  community.general.npm:
-    path: /app
-    state: latest
+- name: build maven package
+  ansible.builtin.shell: mvn clean package ; target/{{component}}-1.0.jar {{component}}.jar
+  args:
+    chdir: /app
 
 - name: systemd files
   ansible.builtin.include_tasks: "systemd.yml"
-
 
 - name: load schema
   ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
