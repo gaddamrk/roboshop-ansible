@@ -28,7 +28,7 @@
   ansible.builtin.include_tasks: "app-prereq.yml"
 
 - name: download dependencies
-  ansible.builitn.pip:
+  ansible.builtin.pip:
     requirements: /app/requirement.txt
     executable: pip3.6
 
