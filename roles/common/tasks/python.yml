@@ -1,24 +1,22 @@
-- name: configure nodejs.yml repos
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-
-- name: install nodejs.yml
+- name: install python
   ansible.builtin.yum:
-    name: nodejs
+    name:
+      - python36
+      - gcc
+      - python3-devel
     state: installed
 
 - name: app prereq files import
   ansible.builtin.include_tasks: "app-prereq.yml"
 
-- name: install nodejs dependencies
-  community.general.npm:
-    path: /app
-    state: latest
 
+- name: download dependencies
+  ansible.builtin.pip:
+    requirements: /app/requirement.txt
+    executable: pip3.6
 
-- name: systemd files
+- name: systemd set up
   ansible.builtin.include_tasks: "systemd.yml"
-
-
 
 - name: load schema
   ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"

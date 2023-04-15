@@ -1,26 +1,4 @@
-
-
-- name: install python
-  ansible.builtin.yum:
-    name:
-      - python36
-      - gcc
-      - python3-devel
-    state: installed
-
-- name: app prereq files import
-  ansible.builtin.include_tasks: "app-prereq.yml"
-
-
-- name: download dependencies
-  ansible.builtin.pip:
-    requirements: /app/requirement.txt
-    executable: pip3.6
-
-- name: systemd set up
-  ansible.builtin.include_tasks: "systemd.yml"
-
-- name: load schema
-  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
-  when: schema_load
-
+- name: import phython
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: python
