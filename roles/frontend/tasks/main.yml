@@ -1,35 +1,4 @@
-#    source common.sh
-#
-#    print_head "install nginx"
-#    yum install nginx -y &>>${log}
-#    status_check
-#
-#    print_head "remove old content"
-#    rm -rf /usr/share/nginx/html/*  &>>${log}
-#    status_check
-#
-#    print_head "download the frontend content"
-#    curl -o /tmp/frontend.zip http://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${log}
-#    status_check
-#
-#    cd /usr/share/nginx/html
-#    print_head "extract the frontend files"
-#    unzip /tmp/frontend.zip &>>${log}
-#    status_check
-#
-#    print_head "copy the roboshop content file"
-#    cp $script_location/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log}
-#    status_check
-#
-#    print_head "enable nginx service"
-#    systemctl enable nginx &>>${log}
-#    status_check
-#
-#    print_head "start nginx service"
-#    systemctl restart nginx &>>${log}
-#    status_check
-#
-#
+
 
 - name: Install nginx
   ansible.builtin.yum:
@@ -38,23 +7,23 @@
 
 - name: remove a directory
   ansible.builtin.file:
-    path: usr/share/nginx/html
+    path: /app
     state: absent
 
 
 - name: ctreate html  directory
   ansible.builtin.file:
-    path: usr/share/nginx/html
+    path: /app
     state: directory
 
 - name: download frontend app content
   ansible.builtin.unarchive:
     src: http://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-    dest: /usr/share/nginx/html
+    dest: /app
     remote_src: yes
 
 - name: copy the roboshop config file to nginx
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
