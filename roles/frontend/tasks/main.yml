@@ -20,7 +20,7 @@
   ansible.builtin.unarchive:
     src: http://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /app
-    remote_src: yes
+
 
 - name: copy the roboshop config file to nginx
   ansible.builtin.template:
