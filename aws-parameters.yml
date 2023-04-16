@@ -3,7 +3,7 @@
   connection: local
   tasks:
     - name: Create parameter
-      community.aws.aws.ssm_parameter:
+      community.aws.aws_ssm_parameter_store:
         name: "{{ item.name }}"
         value: "{{ item.variable }}"
         region: us-east-1
