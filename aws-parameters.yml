@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Create or update key/value pair in AWS SSM parameter store
+    - name: Create parameter
       community.aws.aws.ssm_parameter:
         name: "{{ item.name }}"
         value: "{{ item.variable }}"
