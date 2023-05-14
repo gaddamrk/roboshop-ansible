@@ -31,5 +31,13 @@
         - {name: "dev.payment.AMQP_USER", value: "roboshop" }
 
 
-      # PASSWORDS SHOULD NEVER KEPT UNDER THIS REPOS PASSWORD SHOULD BE CREATED MANUALLY.. FOR LAB PRACTICE ONLY DOING
+   # PASSWORDS SHOULD NEVER KEPT UNDER THIS REPOS PASSWORD SHOULD BE CREATED MANUALLY.. FOR LAB PRACTICE ONLY DOING
+
+    - name: Create  secret parameter
+      community.aws.aws_ssm_parameter_store:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        region: us-east-1
+        string_type: "securestring"
+      loop:
         - {name: "dev.payment.AMQP_PASS", value: "roboshop123" }
