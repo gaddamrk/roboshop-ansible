@@ -9,3 +9,11 @@
         region: us-east-1
       loop:
         - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - { name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
+        - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
