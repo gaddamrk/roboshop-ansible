@@ -1,3 +1,4 @@
 component: cart
 schema_load: false
 schema_type: mysql
+app_varion: 1.0.0
