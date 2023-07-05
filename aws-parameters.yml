@@ -9,7 +9,7 @@
         region: us-east-1
       loop:
         - {name: "dev.cart.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
-        - { name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devops70roboshop.online" }
+        - {name: "dev.cart.CATALOGUE_HOST", value: "catalogue-dev.devops70roboshop.online" }
         - {name: "dev.catalogue.MONGO", value: "true" }
         - {name: "dev.catalogue.MONGO_URL", value: "mongodb://mongodb-dev.devops70roboshop.online:27017/catalogue" }
         - {name: "dev.frontend.CATALOGUE_URL", value: "http://catalogue-dev.devops70roboshop.online:8080/" }
@@ -41,6 +41,6 @@
         string_type: "SecureString"
       loop:
         - {name: "dev.payment.AMQP_PASS", value: "roboshop123" }
-        - { name: "dev.rabbitmq.AMQP_PASS", value: "roboshop123" }
+        - {name: "dev.rabbitmq.AMQP_PASS", value: "roboshop123" }
         - {name: "dev.mysql.DB_ADMIN_USER", value: "root" }
         - {name: "dev.MYSQL.DB_ADMIN_PASS", value: "RoboShop@1" }
