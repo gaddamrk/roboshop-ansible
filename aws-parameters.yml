@@ -18,7 +18,7 @@
         - {name: "dev.frontend.SHIPPING_URL", value: "http://shipping-dev.devops70roboshop.online:8080/" }
         - {name: "dev.frontend.PAYMENT_URL", value: " http://payment-dev.devops70roboshop.online:8080/" }
 
-        - {name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.devops70roboshop.online:8080" }
+        - {name: "dev.shipping.CART_ENDPOINT", value: "cart-dev.devops70roboshop.online" }
         - {name: "dev.shipping.DB_HOST", value: "mysql-dev.devops70roboshop.online" }
         - {name: "dev.user.MONGO", value: "true" }
         - {name: "dev.user.REDIS_HOST", value: "redis-dev.devops70roboshop.online" }
