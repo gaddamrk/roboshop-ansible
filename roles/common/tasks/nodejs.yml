@@ -14,6 +14,11 @@
     path: /app
     state: latest
 
+- name: download CA file
+  community.builtin.get_url:
+    url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+    dest: /home/roboshop/{{component}}/rds-combined-ca-bundle.pem
+  when: schema_load
 
 - name: systemd files
   ansible.builtin.include_tasks: "systemd.yml"
