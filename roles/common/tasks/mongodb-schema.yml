@@ -17,4 +17,4 @@
 #    idempotent: yes
 
 - name: load schema
-  ansible.builtin.shell: mongo --tls --host dev-docdb-cluster.cluster-crle4cpexxvd.us-east-1.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }}
+  ansible.builtin.shell: mongo --tls --host dev-docdb-cluster.cluster-crle4cpexxvd.us-east-1.docdb.amazonaws.com:27017 --tlsCAFile global-bundle.pem --username {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_USER", region='us-east-1' ) }} --password {{ lookup('aws_ssm', "{{env}}.docdb.DB_ADMIN_PASS", region='us-east-1' ) }}
