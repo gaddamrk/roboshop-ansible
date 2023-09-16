@@ -6,10 +6,10 @@
 
 - name: install mongodb server
   ansible.builtin.yum:
-    name: mongodb-mongosh
+    name: mongodb-org-shell
     state: installed
 
-#
+# mongodb-mongosh
 #- name: load schema
 #  community.mongodb.mongodb_shell:
 #    login_host: mongodb-dev.devops70roboshop.online
